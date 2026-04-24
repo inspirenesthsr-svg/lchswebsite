@@ -1178,6 +1178,10 @@ a {
     max-width: none;
     justify-self: stretch;
   }
+
+  .donate-fields {
+    grid-template-columns: 1fr;
+  }
 }
 
 .donate-payee {
@@ -1197,8 +1201,8 @@ a {
 }
 
 .donate-fields {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
@@ -1938,3 +1942,496 @@ a {
     max-width: 250px;
   }
 }
+
+/* ========================================
+   Members Title Row + Pay Fees Button
+   ======================================== */
+
+.members-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.members-title-row .section-title {
+  margin-bottom: 0;
+}
+
+.btn-pay-fees {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.btn-pay-fees:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 58, 107, 0.25);
+}
+
+.btn-pay-fees i {
+  font-size: 1rem;
+}
+
+/* ========================================
+   Membership Fees Modal
+   ======================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(10, 25, 50, 0.72);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 36px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 30px 80px rgba(10, 25, 50, 0.35);
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.modal-header h3 {
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Two-column body */
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Left — QR code */
+.modal-qr-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal-qr-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-qr-frame {
+  background: var(--off-white);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-qr-frame:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.modal-qr-frame img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+/* Right — UPI */
+.modal-upi-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-upi-card {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.modal-upi-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-light);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-upi-id {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.modal-copy-feedback {
+  font-size: 0.82rem;
+  color: var(--accent-light);
+  font-weight: 600;
+  min-height: 18px;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-upi-note {
+  background: var(--off-white);
+  border: 1px solid var(--light-gray);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 0.82rem;
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+.modal-upi-note i {
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+.modal-upi-note a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Responsive modal */
+@media (max-width: 560px) {
+  .modal-box {
+    padding: 32px 20px 28px;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .modal-qr-frame img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .members-title-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   Wide Modal (2-column) + Member Form
+   ======================================== */
+
+.modal-box--wide {
+  max-width: 780px;
+}
+
+/* 2-col: QR left | Form right */
+.modal-body--two-col {
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ---- Left column: QR + UPI below ---- */
+.modal-qr-frame--large {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+}
+
+.modal-qr-frame--large img {
+  width: 260px;
+  height: 260px;
+}
+
+/* Compact UPI row below QR */
+.modal-upi-inline {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-upi-inline-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gray);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal-upi-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--off-white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.modal-upi-inline-id {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.modal-upi-copy-sm {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 0.78rem;
+  transition: var(--transition);
+}
+
+.modal-upi-copy-sm:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+/* ---- Right column: Fee badge + Form ---- */
+.modal-form-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Fee badge */
+.modal-fee-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.modal-fee-badge strong {
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.modal-form-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.modal-member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-field span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.modal-field input {
+  padding: 10px 14px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  background: var(--off-white);
+  outline: none;
+  transition: var(--transition);
+}
+
+.modal-field input:focus {
+  border-color: var(--primary-light);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.modal-field input::placeholder {
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.modal-submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.modal-form-feedback {
+  font-size: 0.82rem;
+  color: #27ae60;
+  font-weight: 600;
+  min-height: 18px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+/* Responsive: stack to single column */
+@media (max-width: 680px) {
+  .modal-body--two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-box--wide {
+    max-width: 420px;
+  }
+
+  .modal-qr-frame--large img {
+    width: 200px;
+    height: 200px;
+  }
+}
+

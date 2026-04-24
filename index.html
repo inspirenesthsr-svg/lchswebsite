@@ -514,8 +514,16 @@
                 <input type="text" name="donorName" id="donorName" required autocomplete="name" placeholder="Full name">
               </label>
               <label class="donate-field">
+                <span class="donate-field-label">Email ID</span>
+                <input type="email" name="donorEmail" id="donorEmail" required autocomplete="email" placeholder="your@email.com">
+              </label>
+              <label class="donate-field">
                 <span class="donate-field-label">Phone number</span>
                 <input type="tel" name="donorPhone" id="donorPhone" required autocomplete="tel" inputmode="numeric" placeholder="Mobile number" pattern="[0-9+\\s-]{10,15}">
+              </label>
+              <label class="donate-field">
+                <span class="donate-field-label">Donation amount (₹)</span>
+                <input type="number" name="donorAmount" id="donorAmount" required inputmode="numeric" placeholder="e.g. 1000" min="1">
               </label>
             </div>
             <button type="submit" class="btn btn-primary btn-lg donate-submit" id="donateSubmitBtn">
@@ -552,7 +560,12 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Lions Year 2025&ndash;26</span>
-        <h2 class="section-title">Members</h2>
+        <div class="members-title-row">
+          <h2 class="section-title">Members</h2>
+          <button class="btn btn-pay-fees" id="payFeesBtn" onclick="document.getElementById('membershipFeesModal').classList.add('active')">
+            <i class="fas fa-qrcode"></i> Pay Membership Fees
+          </button>
+        </div>
         <div class="section-divider"></div>
       </div>
       <div class="members-grid" role="list">
@@ -1067,5 +1080,96 @@
   </footer>
 
   <script src="script.js"></script>
+  <!-- Membership Fees Modal -->
+  <div class="modal-overlay" id="membershipFeesModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box modal-box--wide">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close" onclick="document.getElementById('membershipFeesModal').classList.remove('active')">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-icon"><i class="fas fa-id-card"></i></div>
+        <div>
+          <h3 id="modalTitle">Pay Membership Fees</h3>
+          <p class="modal-subtitle">Lions Club of Hosur Sipcot &mdash; Year 2025&ndash;26</p>
+        </div>
+      </div>
+      <div class="modal-body modal-body--two-col">
+        <!-- Col 1: QR Code (prominent) + UPI below -->
+        <div class="modal-qr-side">
+          <p class="modal-qr-label">Scan QR to Pay</p>
+          <div class="modal-qr-frame modal-qr-frame--large">
+            <img src="images/admin_members-qr.png" alt="UPI QR Code for Membership Fees" width="260" height="260">
+          </div>
+          <!-- UPI ID compact below QR -->
+          <div class="modal-upi-inline">
+            <span class="modal-upi-inline-label"><i class="fas fa-mobile-alt"></i> or pay to UPI ID</span>
+            <div class="modal-upi-inline-row">
+              <span class="modal-upi-inline-id" id="membershipUpiId">lionsclubofhosursipcotproject1@tmb</span>
+              <button class="modal-upi-copy-sm" id="copyMembershipUpiBtn" onclick="copyMembershipUpi()" title="Copy UPI ID">
+                <i class="fas fa-copy"></i>
+              </button>
+            </div>
+            <p class="modal-copy-feedback" id="membershipCopyFeedback" aria-live="polite"></p>
+          </div>
+        </div>
+        <!-- Col 2: Member Details Form -->
+        <div class="modal-form-side">
+          <div class="modal-fee-badge">
+            <i class="fas fa-rupee-sign"></i> Membership Fee &nbsp;<strong>₹16,500</strong>
+          </div>
+          <p class="modal-form-title"><i class="fas fa-user-check"></i> Member Details</p>
+          <form class="modal-member-form" id="memberFeesForm" onsubmit="submitMemberFeesForm(event)">
+            <label class="modal-field">
+              <span>Full Name</span>
+              <input type="text" id="mfName" name="mfName" placeholder="Your full name" required autocomplete="name">
+            </label>
+            <label class="modal-field">
+              <span>Email ID</span>
+              <input type="email" id="mfEmail" name="mfEmail" placeholder="your@email.com" required autocomplete="email">
+            </label>
+            <label class="modal-field">
+              <span>Phone Number</span>
+              <input type="tel" id="mfPhone" name="mfPhone" placeholder="10-digit mobile number" required autocomplete="tel" inputmode="numeric" pattern="[0-9+\s-]{10,15}">
+            </label>
+            <button type="submit" class="btn btn-primary modal-submit-btn">
+              <i class="fas fa-paper-plane"></i> Submit Details
+            </button>
+            <p class="modal-form-feedback" id="mfFeedback" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Close modal on overlay click
+    document.getElementById('membershipFeesModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('active');
+    });
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.getElementById('membershipFeesModal').classList.remove('active');
+    });
+    function copyMembershipUpi() {
+      var upi = document.getElementById('membershipUpiId').textContent;
+      navigator.clipboard.writeText(upi).then(function() {
+        var fb = document.getElementById('membershipCopyFeedback');
+        fb.textContent = '✓ Copied!';
+        setTimeout(function() { fb.textContent = ''; }, 2500);
+      });
+    }
+    function submitMemberFeesForm(e) {
+      e.preventDefault();
+      var name  = document.getElementById('mfName').value.trim();
+      var email = document.getElementById('mfEmail').value.trim();
+      var phone = document.getElementById('mfPhone').value.trim();
+      var fb    = document.getElementById('mfFeedback');
+      var subject = encodeURIComponent('Membership Fee Payment — ' + name);
+      var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n[Please mention your UPI transaction reference here]');
+      window.location.href = 'mailto:lionsclubhosursipcot@gmail.com?subject=' + subject + '&body=' + body;
+      fb.textContent = '✓ Opening your email app…';
+      setTimeout(function() { fb.textContent = ''; }, 3000);
+    }
+  </script>
 </body>
 </html>
