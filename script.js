@@ -150,4 +150,40 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = mailto;
     });
   }
+
+  // Members Tabs functionality
+  const membersTabs = document.querySelectorAll('.members-tab');
+  const membersTabContents = document.querySelectorAll('.members-tab-content');
+
+  membersTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-tab');
+      
+      // Remove active class from all tabs and contents
+      membersTabs.forEach(t => t.classList.remove('active'));
+      membersTabContents.forEach(content => content.classList.remove('active'));
+      
+      // Add active class to clicked tab and corresponding content
+      tab.classList.add('active');
+      document.getElementById(`${targetTab}-tab`).classList.add('active');
+    });
+  });
+
+  // Year-wise Achievements functionality
+  const yearBtns = document.querySelectorAll('.year-btn');
+  const yearContents = document.querySelectorAll('.year-content');
+
+  yearBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetYear = btn.getAttribute('data-year');
+      
+      // Remove active class from all buttons and contents
+      yearBtns.forEach(b => b.classList.remove('active'));
+      yearContents.forEach(content => content.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding content
+      btn.classList.add('active');
+      document.getElementById(`year-${targetYear}`).classList.add('active');
+    });
+  });
 });
