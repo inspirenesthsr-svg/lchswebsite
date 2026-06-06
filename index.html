@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lions Club of Hosur Sipcot | We Serve</title>
+  <title>Lions Club of Hosur SIPCOT | We Serve</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">Est. 40 Years Ago &mdash; Serving Hosur Since Day One</div>
-      <h1 class="hero-title">Lions Club of Hosur Sipcot</h1>
+      <h1 class="hero-title">Lions Club of Hosur SIPCOT</h1>
       <p class="hero-subtitle">We Serve</p>
       <p class="hero-description">
         One of the oldest and most impactful clubs in Hosur, topping District 324E among 185+ clubs for purpose, professionalism, transparency, and execution.
@@ -68,7 +68,7 @@
       <div class="about-grid">
         <div class="about-content">
           <h3>40 Years of Selfless Service</h3>
-          <p>One of the oldest clubs in Hosur, Lions Club of Hosur Sipcot has consistently topped District 324E among 185+ clubs for the impact we make on society.</p>
+          <p>One of the oldest clubs in Hosur, Lions Club of Hosur SIPCOT has consistently topped District 324E among 185+ clubs for the impact we make on society.</p>
           <div class="about-features">
             <div class="about-feature">
               <div class="feature-icon"><i class="fas fa-trophy"></i></div>
@@ -116,7 +116,7 @@
         <div class="structure-card">
           <div class="structure-icon"><i class="fas fa-landmark"></i></div>
           <h3>Club</h3>
-          <p>Lions Club of Hosur Sipcot &mdash; the parent organization leading community service in Hosur for over 40 years with purpose, professionalism, and transparency.</p>
+          <p>Lions Club of Hosur SIPCOT &mdash; the parent organization leading community service in Hosur for over 40 years with purpose, professionalism, and transparency.</p>
         </div>
         <div class="structure-card">
           <div class="structure-icon structure-icon--blood"><i class="fas fa-tint"></i></div>
@@ -898,7 +898,7 @@
         </p>
       </div>
       <div class="donate-payment-wrap">
-        <p class="donate-payee">Lions Club of Hosur Sipcot Project</p>
+        <p class="donate-payee">Lions Club of Hosur SIPCOT Project</p>
 
         <div class="donate-payment-main">
           <form class="donate-form" id="donateForm" action="#" method="get" novalidate>
@@ -919,6 +919,21 @@
                 <span class="donate-field-label">Donation amount (₹)</span>
                 <input type="number" name="donorAmount" id="donorAmount" required inputmode="numeric" placeholder="e.g. 1000" min="1">
               </label>
+              <label class="donate-field donate-field--full">
+                <span class="donate-field-label">Purpose of donation</span>
+                <select name="donorPurpose" id="donorPurpose" required>
+                  <option value="">Select purpose</option>
+                  <option value="Blood Bank">Blood Bank</option>
+                  <option value="School Adoption">School Adoption</option>
+                  <option value="Medical Camps">Medical Camps</option>
+                  <option value="Service Hall Project">Service Hall Project</option>
+                  <option value="Eye Care Programs">Eye Care Programs</option>
+                  <option value="Tree Plantation">Tree Plantation</option>
+                  <option value="Food for Hunger">Food for Hunger</option>
+                  <option value="General Donation">General Donation</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
             </div>
             <button type="submit" class="btn btn-primary btn-lg donate-submit" id="donateSubmitBtn">
               <i class="fas fa-paper-plane"></i> Submit donation details
@@ -929,7 +944,7 @@
             <div class="donate-qr-block">
               <h3 class="donate-qr-title">Scan QR code to pay</h3>
               <div class="donate-qr-frame">
-                <img src="images/donate-qr.png" alt="UPI QR code — Lions Club of Hosur Sipcot Project" width="280" height="280" loading="lazy">
+                <img src="images/donate-qr.png" alt="UPI QR code — Lions Club of Hosur SIPCOT Project" width="280" height="280" loading="lazy">
               </div>
             </div>
           </div>
@@ -937,7 +952,7 @@
 
         <div class="donate-upi-block">
           <p class="donate-upi-label">Or pay to UPI ID</p>
-          <p class="donate-upi-id" id="donateUpiId">lionsclubofhosursipcotproject@tmb</p>
+          <p class="donate-upi-id" id="donateUpiId">lionsclubofhosurSIPCOTproject@tmb</p>
           <button type="button" class="btn donate-copy-btn" id="copyUpiBtn">
             <i class="fas fa-copy"></i> Copy UPI ID
           </button>
@@ -956,7 +971,7 @@
         <span class="section-label">Lions Year 2025&ndash;26</span>
         <div class="members-title-row">
           <h2 class="section-title">Members</h2>
-          <button class="btn btn-pay-fees" id="payFeesBtn" onclick="document.getElementById('membershipFeesModal').classList.add('active')">
+          <button class="btn btn-pay-fees" id="payFeesBtn" onclick="resetMembershipModal(); document.getElementById('membershipFeesModal').classList.add('active')">
             <i class="fas fa-qrcode"></i> Pay Membership Fees
           </button>
         </div>
@@ -971,317 +986,93 @@
 
       <!-- PSTs Tab Content -->
       <div class="members-tab-content active" id="psts-tab">
-        <div class="psts-grid">
-          
-          <!-- 2024-2025 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2024-2025</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Selvakumar RR</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Narasimman</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Jagannathan</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2023-2024 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2023-2024</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Dhanapal Raj</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Jagan Kumar</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Rajesh Kanna</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2022-2023 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2022-2023</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Mahesh</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Senthil</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Narasimman</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2021-2022 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2021-2022</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Praveen</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Ganesan</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Dr Pradeep</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2020-2021 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2020-2021</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Devarajan</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Rajeshkanna</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Jagan</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2019-2020 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2019-2020</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln N Sridharan</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary Admin</h4>
-                </div>
-                <p class="pst-member-name">Ln Selvakumar</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-tasks"></i></div>
-                  <h4 class="pst-role-title">Secretary Project</h4>
-                </div>
-                <p class="pst-member-name">Ln Dhanapal Raj</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Senthil</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2018-2019 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2018-2019</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Rajesh Kanna</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary</h4>
-                </div>
-                <p class="pst-member-name">Ln Siva</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Ganesan</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2017-2018 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2017-2018</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Sundramoorthy</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary Admin</h4>
-                </div>
-                <p class="pst-member-name">Ln Praveen</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-tasks"></i></div>
-                  <h4 class="pst-role-title">Secretary Project</h4>
-                </div>
-                <p class="pst-member-name">Ln Prem</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Selvakumar</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2016-2017 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2016-2017</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln VMuralidharan</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary Admin</h4>
-                </div>
-                <p class="pst-member-name">Ln Sezhian</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-tasks"></i></div>
-                  <h4 class="pst-role-title">Secretary Project</h4>
-                </div>
-                <p class="pst-member-name">Ln Mahesh</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Mallesh</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2015-2016 -->
-          <div class="pst-year-section">
-            <h3 class="pst-year-title">Lions Year 2015-2016</h3>
-            <div class="pst-roles-grid">
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-crown"></i></div>
-                  <h4 class="pst-role-title">President</h4>
-                </div>
-                <p class="pst-member-name">Ln Janakar</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-file-alt"></i></div>
-                  <h4 class="pst-role-title">Secretary Admin</h4>
-                </div>
-                <p class="pst-member-name">Ln Sridhar</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-tasks"></i></div>
-                  <h4 class="pst-role-title">Secretary Project</h4>
-                </div>
-                <p class="pst-member-name">Ln Kamalasekaran</p>
-              </div>
-              <div class="pst-role-card">
-                <div class="pst-role-header">
-                  <div class="pst-role-icon"><i class="fas fa-coins"></i></div>
-                  <h4 class="pst-role-title">Treasurer</h4>
-                </div>
-                <p class="pst-member-name">Ln Devarajan</p>
-              </div>
-            </div>
-          </div>
-
+        <div class="psts-table-container">
+          <table class="psts-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-calendar-alt"></i> Lions Year</th>
+                <th><i class="fas fa-crown"></i> President</th>
+                <th><i class="fas fa-file-alt"></i> Secretary Admin</th>
+                <th><i class="fas fa-tasks"></i> Secretary Project</th>
+                <th><i class="fas fa-coins"></i> Treasurer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="year-cell">2024-2025</td>
+                <td>Ln Selvakumar RR</td>
+                <td>Ln Narasimman</td>
+                <td>—</td>
+                <td>Ln Jagannathan</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2023-2024</td>
+                <td>Ln Dhanapal Raj</td>
+                <td>Ln Jagan Kumar</td>
+                <td>—</td>
+                <td>Ln Rajesh Kanna</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2022-2023</td>
+                <td>Ln Mahesh</td>
+                <td>Ln Senthil</td>
+                <td>—</td>
+                <td>Ln Narasimman</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2021-2022</td>
+                <td>Ln Praveen</td>
+                <td>Ln Ganesan</td>
+                <td>—</td>
+                <td>Ln Dr Pradeep</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2020-2021</td>
+                <td>Ln Devarajan</td>
+                <td>Ln Rajeshkanna</td>
+                <td>—</td>
+                <td>Ln Jagan</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2019-2020</td>
+                <td>Ln N Sridharan</td>
+                <td>Ln Selvakumar</td>
+                <td>Ln Dhanapal Raj</td>
+                <td>Ln Senthil</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2018-2019</td>
+                <td>Ln Rajesh Kanna</td>
+                <td>Ln Siva</td>
+                <td>—</td>
+                <td>Ln Ganesan</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2017-2018</td>
+                <td>Ln Sundramoorthy</td>
+                <td>Ln Praveen</td>
+                <td>Ln Prem</td>
+                <td>Ln Selvakumar</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2016-2017</td>
+                <td>Ln VMuralidharan</td>
+                <td>Ln Sezhian</td>
+                <td>Ln Mahesh</td>
+                <td>Ln Mallesh</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2015-2016</td>
+                <td>Ln Janakar</td>
+                <td>Ln Sridhar</td>
+                <td>Ln Kamalasekaran</td>
+                <td>Ln Devarajan</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+          
       </div>
 
       <!-- Members Tab Content -->
@@ -1698,7 +1489,7 @@
           </div>
         </div>
         <div class="membership-cta">
-          <a href="mailto:lionsclubhosursipcot@gmail.com?subject=Membership%20inquiry%20-%20LCHS" class="btn btn-primary btn-lg">
+          <a href="mailto:lionsclubhosurSIPCOT@gmail.com?subject=Membership%20inquiry%20-%20LCHS" class="btn btn-primary btn-lg">
             <i class="fas fa-envelope"></i> Inquire About Membership
           </a>
         </div>
@@ -1749,7 +1540,7 @@
       </div>
       <div class="partner-cta">
         <p>Ready to make a difference? Reach out to us to explore partnership opportunities.</p>
-        <a href="mailto:lionsclubhosursipcot@gmail.com" class="btn btn-primary btn-lg">
+        <a href="mailto:lionsclubhosurSIPCOT@gmail.com" class="btn btn-primary btn-lg">
           <i class="fas fa-envelope"></i> Get In Touch
         </a>
       </div>
@@ -1764,7 +1555,7 @@
           <div class="footer-logo">
             <img src="images/lions-logo.svg" alt="Lions Club International Logo">
             <div>
-              <h3>Lions Club of Hosur Sipcot</h3>
+              <h3>Lions Club of Hosur SIPCOT</h3>
               <p>We Serve</p>
             </div>
           </div>
@@ -1794,7 +1585,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Lions Club of Hosur Sipcot. All rights reserved.</p>
+        <p>&copy; 2025 Lions Club of Hosur SIPCOT. All rights reserved.</p>
         <p>District 324E &bull; Lions Clubs International</p>
       </div>
     </div>
@@ -1811,21 +1602,25 @@
         <div class="modal-icon"><i class="fas fa-id-card"></i></div>
         <div>
           <h3 id="modalTitle">Pay Membership Fees</h3>
-          <p class="modal-subtitle">Lions Club of Hosur Sipcot &mdash; Year 2025&ndash;26</p>
+          <p class="modal-subtitle">Lions Club of Hosur SIPCOT &mdash; Year 2025&ndash;26</p>
         </div>
       </div>
       <div class="modal-body modal-body--two-col">
-        <!-- Col 1: QR Code (prominent) + UPI below -->
+        <!-- Col 1: QR Code (masked until phone validated) + UPI below -->
         <div class="modal-qr-side">
           <p class="modal-qr-label">Scan QR to Pay</p>
-          <div class="modal-qr-frame modal-qr-frame--large">
-            <img src="images/admin_members-qr.png" alt="UPI QR Code for Membership Fees" width="260" height="260">
+          <div class="modal-qr-frame modal-qr-frame--large" id="qrCodeContainer">
+            <div class="qr-mask" id="qrMask">
+              <i class="fas fa-lock"></i>
+              <p>Enter phone number to reveal membership information</p>
+            </div>
+            <img src="images/admin_members-qr.png" alt="UPI QR Code for Membership Fees" width="260" height="260" id="qrCodeImage" class="qr-hidden">
           </div>
           <!-- UPI ID compact below QR -->
-          <div class="modal-upi-inline">
+          <div class="modal-upi-inline" id="upiSection" style="display: none;">
             <span class="modal-upi-inline-label"><i class="fas fa-mobile-alt"></i> or pay to UPI ID</span>
             <div class="modal-upi-inline-row">
-              <span class="modal-upi-inline-id" id="membershipUpiId">lionsclubofhosursipcotproject1@tmb</span>
+              <span class="modal-upi-inline-id" id="membershipUpiId">lionsclubofhosurSIPCOTproject1@tmb</span>
               <button class="modal-upi-copy-sm" id="copyMembershipUpiBtn" onclick="copyMembershipUpi()" title="Copy UPI ID">
                 <i class="fas fa-copy"></i>
               </button>
@@ -1840,21 +1635,31 @@
           </div>
           <p class="modal-form-title"><i class="fas fa-user-check"></i> Member Details</p>
           <form class="modal-member-form" id="memberFeesForm" onsubmit="submitMemberFeesForm(event)">
-            <label class="modal-field">
-              <span>Full Name</span>
-              <input type="text" id="mfName" name="mfName" placeholder="Your full name" required autocomplete="name">
-            </label>
-            <label class="modal-field">
-              <span>Email ID</span>
-              <input type="email" id="mfEmail" name="mfEmail" placeholder="your@email.com" required autocomplete="email">
-            </label>
-            <label class="modal-field">
-              <span>Phone Number</span>
-              <input type="tel" id="mfPhone" name="mfPhone" placeholder="10-digit mobile number" required autocomplete="tel" inputmode="numeric" pattern="[0-9+\s-]{10,15}">
-            </label>
-            <button type="submit" class="btn btn-primary modal-submit-btn">
-              <i class="fas fa-paper-plane"></i> Submit Details
-            </button>
+            <div class="phone-validate-group">
+              <label class="modal-field modal-field--with-button">
+                <span>Phone Number</span>
+                <div class="input-button-group">
+                  <input type="tel" id="mfPhone" name="mfPhone" placeholder="10-digit mobile number" required autocomplete="tel" inputmode="numeric" pattern="[0-9]{10}">
+                  <button type="button" class="btn-validate" id="validatePhoneBtn" onclick="validatePhoneNumber()">
+                    <i class="fas fa-check"></i> Validate
+                  </button>
+                </div>
+              </label>
+              <p class="validation-feedback" id="phoneFeedback" aria-live="polite"></p>
+            </div>
+            <div id="additionalFields" style="display: none;">
+              <label class="modal-field">
+                <span>Full Name</span>
+                <input type="text" id="mfName" name="mfName" placeholder="Your full name" required autocomplete="name">
+              </label>
+              <label class="modal-field">
+                <span>Email ID</span>
+                <input type="email" id="mfEmail" name="mfEmail" placeholder="your@email.com" required autocomplete="email">
+              </label>
+              <button type="submit" class="btn btn-primary modal-submit-btn">
+                <i class="fas fa-paper-plane"></i> Submit Details
+              </button>
+            </div>
             <p class="modal-form-feedback" id="mfFeedback" aria-live="polite"></p>
           </form>
         </div>
@@ -1863,14 +1668,56 @@
   </div>
 
   <script>
+    // Reset modal function
+    function resetMembershipModal() {
+      // Reset form
+      document.getElementById('memberFeesForm').reset();
+      
+      // Hide QR code and show mask
+      document.getElementById('qrMask').style.display = 'flex';
+      document.getElementById('qrCodeImage').classList.add('qr-hidden');
+      document.getElementById('upiSection').style.display = 'none';
+      
+      // Hide additional fields
+      document.getElementById('additionalFields').style.display = 'none';
+      
+      // Enable phone input and validate button
+      var phoneInput = document.getElementById('mfPhone');
+      var validateBtn = document.getElementById('validatePhoneBtn');
+      phoneInput.disabled = false;
+      validateBtn.disabled = false;
+      validateBtn.innerHTML = '<i class="fas fa-check"></i> Validate';
+      
+      // Clear feedback messages
+      document.getElementById('phoneFeedback').textContent = '';
+      document.getElementById('mfFeedback').textContent = '';
+      document.getElementById('membershipCopyFeedback').textContent = '';
+    }
+    
     // Close modal on overlay click
     document.getElementById('membershipFeesModal').addEventListener('click', function(e) {
-      if (e.target === this) this.classList.remove('active');
+      if (e.target === this) {
+        this.classList.remove('active');
+        resetMembershipModal();
+      }
     });
+    
     // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') document.getElementById('membershipFeesModal').classList.remove('active');
+      if (e.key === 'Escape') {
+        var modal = document.getElementById('membershipFeesModal');
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          resetMembershipModal();
+        }
+      }
     });
+    
+    // Close button functionality
+    document.getElementById('modalCloseBtn').addEventListener('click', function() {
+      resetMembershipModal();
+    });
+    
     function copyMembershipUpi() {
       var upi = document.getElementById('membershipUpiId').textContent;
       navigator.clipboard.writeText(upi).then(function() {
@@ -1879,6 +1726,63 @@
         setTimeout(function() { fb.textContent = ''; }, 2500);
       });
     }
+    
+    // List of valid member phone numbers
+    var validMemberPhones = [
+      '9443054936', '9886306696', '9842678866', '9448354457', '8939890035',
+      '9362322002', '8610365350', '8144507755', '9952370500', '9443366147',
+      '9842994204', '9952017117', '9842994201', '9362310245', '9443227570',
+      '9994455980', '9944678484', '9790612504', '9443320879', '9842721597',
+      '9443351957', '9600144410', '9443271419', '9442638120', '9894448039',
+      '9842727634', '9443244123', '9894792151', '9443376298', '9047013129',
+      '9790233980', '9790699254', '9994712468', '9443121199', '9994951574',
+      '9962152605', '9442871900', '9791358904', '9443365974', '8344476277',
+      '8971532323', '9884848888', '9894601095', '9443135994', '9994444326',
+      '9345340260', '9443276407', '9489044626', '9940891501', '9677455900',
+      '9362310414', '9003951440'
+    ];
+    
+    function validatePhoneNumber() {
+      var phoneInput = document.getElementById('mfPhone');
+      var phone = phoneInput.value.trim();
+      var feedback = document.getElementById('phoneFeedback');
+      var validateBtn = document.getElementById('validatePhoneBtn');
+      
+      // Remove any non-digit characters
+      var cleanPhone = phone.replace(/\D/g, '');
+      
+      // Check if it's 10 digits
+      if (cleanPhone.length !== 10) {
+        feedback.textContent = '❌ Please enter a valid 10-digit phone number';
+        feedback.style.color = '#e74c3c';
+        return;
+      }
+      
+      // Check if phone number is in the valid members list
+      if (validMemberPhones.includes(cleanPhone)) {
+        // Valid member - reveal QR code
+        feedback.textContent = '✓ Phone number validated successfully!';
+        feedback.style.color = '#27ae60';
+        
+        // Reveal QR code and UPI section
+        document.getElementById('qrMask').style.display = 'none';
+        document.getElementById('qrCodeImage').classList.remove('qr-hidden');
+        document.getElementById('upiSection').style.display = 'block';
+        
+        // Show additional fields
+        document.getElementById('additionalFields').style.display = 'block';
+        
+        // Disable phone input and validate button
+        phoneInput.disabled = true;
+        validateBtn.disabled = true;
+        validateBtn.innerHTML = '<i class="fas fa-check-circle"></i> Verified';
+      } else {
+        // Invalid member
+        feedback.textContent = '❌ Phone number not found in members list. Please contact admin.';
+        feedback.style.color = '#e74c3c';
+      }
+    }
+    
     function submitMemberFeesForm(e) {
       e.preventDefault();
       var name  = document.getElementById('mfName').value.trim();
@@ -1887,7 +1791,7 @@
       var fb    = document.getElementById('mfFeedback');
       var subject = encodeURIComponent('Membership Fee Payment — ' + name);
       var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n[Please mention your UPI transaction reference here]');
-      window.location.href = 'mailto:lionsclubhosursipcot@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:lionsclubhosurSIPCOT@gmail.com?subject=' + subject + '&body=' + body;
       fb.textContent = '✓ Opening your email app…';
       setTimeout(function() { fb.textContent = ''; }, 3000);
     }

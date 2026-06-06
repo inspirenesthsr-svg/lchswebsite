@@ -134,13 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       const name = document.getElementById('donorName').value.trim();
+      const email = document.getElementById('donorEmail').value.trim();
       const phone = document.getElementById('donorPhone').value.trim();
+      const amount = document.getElementById('donorAmount').value.trim();
+      const purpose = document.getElementById('donorPurpose').value;
       const upi = donateUpiId ? donateUpiId.textContent.trim() : '';
       const body = [
         'I have made a donation via UPI.',
         '',
         `Name: ${name}`,
+        `Email: ${email}`,
         `Phone: ${phone}`,
+        `Amount: ₹${amount}`,
+        `Purpose: ${purpose}`,
         '',
         `UPI ID: ${upi}`,
         '',
