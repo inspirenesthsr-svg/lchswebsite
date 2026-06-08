@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lions Hall | Lions Club of Hosur SIPCOT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/lions-logo.svg" alt="Lions Club International Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">Lions Club of Hosur SIPCOT</span>
+          <span class="logo-tagline">We Serve</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="index.html#signatures" class="nav-link">Signature Projects</a></li>
+        <li><a href="bloodbank.html" class="nav-link">Blood Bank</a></li>
+        <li><a href="charitabletrust.html" class="nav-link">Charitable Trust</a></li>
+        <li><a href="index.html#donate" class="nav-link">Donate</a></li>
+        <li><a href="index.html#membership" class="nav-link">Members</a></li>
+        <li><a href="index.html#partner" class="nav-link cta-btn">Partner With Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Rotating Banner -->
+  <section class="hero lionshall-hero" id="hero">
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('images/lionshall/mainhall.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/mainhall-occasion.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/outdoor-occasion.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/boardroom.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/outdoor.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/exterior.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/exterior2.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/lionshall/parking.png');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Lions Hall</h1>
+      <p class="hero-subtitle">Perfect Venue for Every Occasion</p>
+      <p class="hero-description">
+        Spacious halls, modern facilities, and premium comfort for your next gathering
+      </p>
+      <div class="hero-buttons" style="margin-top: 32px;">
+        <a href="https://calendly.com/lionshallhosur/hall-booking" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <i class="fas fa-calendar-check"></i> Book Online
+        </a>
+      </div>
+    </div>
+    <!-- Slider Navigation Dots -->
+    <div class="hero-dots">
+      <span class="hero-dot active" data-slide="0"></span>
+      <span class="hero-dot" data-slide="1"></span>
+      <span class="hero-dot" data-slide="2"></span>
+      <span class="hero-dot" data-slide="3"></span>
+      <span class="hero-dot" data-slide="4"></span>
+      <span class="hero-dot" data-slide="5"></span>
+      <span class="hero-dot" data-slide="6"></span>
+      <span class="hero-dot" data-slide="7"></span>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Everything You Need</span>
+        <h2 class="section-title">Facilities at a Glance</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Everything you need for a successful event, all under one roof
+        </p>
+      </div>
+      
+      <div class="bloodbank-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-expand"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Ample Open Space</h3>
+          <p style="font-size: 0.85rem;">Spacious outdoor area for activities and easy vehicle access</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-parking"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Dedicated Parking Area</h3>
+          <p style="font-size: 0.85rem;">Secure parking space for all your guests' vehicles</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-plug"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Power Backup Generator</h3>
+          <p style="font-size: 0.85rem;">Uninterrupted power supply for seamless events</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-restroom"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Modern Sanitation</h3>
+          <p style="font-size: 0.85rem;">Clean restrooms on ground & first floor</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-building"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Main Hall</h3>
+          <p style="font-size: 0.85rem;">Stage equipped, accommodates up to 150 guests</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-users"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Mini Hall</h3>
+          <p style="font-size: 0.85rem;">Perfect for meetings, conferences & intimate functions</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-tint"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">24x7 Water Supply</h3>
+          <p style="font-size: 0.85rem;">Continuous fresh water availability</p>
+        </div>
+        <div class="bb-card" style="padding: 20px 16px;">
+          <div class="bb-icon" style="width: 50px; height: 50px; font-size: 20px; margin-bottom: 12px;"><i class="fas fa-microphone"></i></div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Audio-Visual Support</h3>
+          <p style="font-size: 0.85rem;">Studio master speakers, cordless mics & projectors</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events We Host Section -->
+  <section class="section" style="background: #f8f9fa;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Versatile Space</span>
+        <h2 class="section-title">Events We Host</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          From intimate gatherings to grand celebrations, we cater to every occasion
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 48px;">
+        <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-briefcase" style="font-size: 24px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Club & Corporate Events</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Business meetings, conferences, product launches</p>
+        </div>
+        <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #e91e63, #f06292); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-gift" style="font-size: 24px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Parties & Celebrations</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Birthday parties, anniversary celebrations</p>
+        </div>
+        <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #9c27b0, #ba68c8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-om" style="font-size: 24px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Religious & Cultural Functions</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Community gatherings, cultural events</p>
+        </div>
+        <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #ff9800, #ffb74d); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-rings-wedding" style="font-size: 24px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Wedding Ceremonies</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Intimate wedding celebrations and receptions</p>
+        </div>
+      </div>
+      
+      <p style="text-align: center; margin-top: 32px; font-size: 1rem; color: var(--text-secondary);">
+        Don't see your event type? <a href="mailto:lionshallhosur@gmail.com" style="color: var(--primary); font-weight: 600;">Contact us</a> – we're flexible!
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Transparent Pricing</span>
+        <h2 class="section-title">Pricing & Availability</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Transparent pricing with no hidden costs. Book your preferred date today.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <!-- Board Room -->
+        <div style="background: var(--white); border: 2px solid var(--light-gray); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
+          <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Board Room</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">Perfect for meetings, discussions & conferences</p>
+          
+          <div style="margin: 24px 0; padding: 16px; background: #f8f9fa; border-radius: var(--radius-md);">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 8px;">Capacity</p>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin: 0;">Up to 25 guests</p>
+          </div>
+          
+          <ul style="text-align: left; list-style: none; padding: 0; margin: 24px 0;">
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #4caf50;"></i><span style="font-size: 0.92rem;">Meeting Table, Chairs, Fan</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #4caf50;"></i><span style="font-size: 0.92rem;">Huge Open space in front</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #4caf50;"></i><span style="font-size: 0.92rem;">Dedicated Wash Area</span></li>
+          </ul>
+          
+          <a href="mailto:lionshallhosur@gmail.com" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fas fa-calendar-check"></i> Reserve Now
+          </a>
+        </div>
+        
+        <!-- Main Hall -->
+        <div style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); border: 3px solid var(--primary); border-radius: var(--radius-lg); padding: 32px; text-align: center; position: relative; box-shadow: 0 8px 24px rgba(205, 127, 50, 0.3);">
+          <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--white); padding: 6px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Most Popular</div>
+          
+          <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 8px; margin-top: 12px;">Main Hall</h3>
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); margin-bottom: 24px;">Spacious hall with stage for larger gatherings</p>
+          
+          <div style="margin: 24px 0; padding: 16px; background: rgba(255,255,255,0.2); border-radius: var(--radius-md); backdrop-filter: blur(10px);">
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin-bottom: 8px;">Capacity</p>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--white); margin: 0;">Up to 150 guests</p>
+          </div>
+          
+          <ul style="text-align: left; list-style: none; padding: 0; margin: 24px 0;">
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Grand hall with elevated stage</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Professional lighting system</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Studio master speakers</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Multiple cordless microphones</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Flexible seating arrangements</span></li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: var(--white);"></i><span style="font-size: 0.92rem; color: rgba(255,255,255,0.95);">Green room facility</span></li>
+          </ul>
+          
+          <a href="mailto:lionshallhosur@gmail.com" class="btn" style="width: 100%; justify-content: center; background: var(--white); color: var(--primary); font-weight: 600;">
+            <i class="fas fa-calendar-check"></i> Reserve Now
+          </a>
+        </div>
+      </div>
+      
+      <div style="margin-top: 48px; padding: 32px; background: #f8f9fa; border-radius: var(--radius-lg); text-align: center;">
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 12px;">
+          <i class="fas fa-clock"></i> Flexible Timing
+        </h4>
+        <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 16px;">Half-day rates available. Custom packages for multi-day events.</p>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">Contact us for special requirements and group discounts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" style="color: var(--white);">Visit & Contact Us</h2>
+        <div class="section-divider" style="background: rgba(255,255,255,0.3);"></div>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+          Located in the heart of the city with easy access and ample parking
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; margin: 0 auto 20px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+            <i class="fas fa-map-marker-alt" style="font-size: 32px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 12px;">Address</h4>
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); margin: 0;">Lions Hall, Gokul Nagar, Hosur</p>
+        </div>
+        
+        <div style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; margin: 0 auto 20px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+            <i class="fas fa-envelope" style="font-size: 32px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 12px;">Email</h4>
+          <p style="font-size: 0.95rem; margin: 0;"><a href="mailto:lionshallhosur@gmail.com" style="color: var(--white); text-decoration: underline;">lionshallhosur@gmail.com</a></p>
+        </div>
+        
+        <div style="text-align: center; padding: 24px;">
+          <div style="width: 80px; height: 80px; margin: 0 auto 20px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+            <i class="fas fa-clock" style="font-size: 32px; color: var(--white);"></i>
+          </div>
+          <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 12px;">Operating Hours</h4>
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); margin: 0;">Open 24×7</p>
+          <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-top: 8px;">Free Parking Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/lions-logo.svg" alt="Lions Club International Logo">
+            <div>
+              <h3>Lions Club of Hosur SIPCOT</h3>
+              <p>We Serve</p>
+            </div>
+          </div>
+          <p>One of the oldest and most impactful Lions Clubs in Hosur, serving the community with purpose, professionalism, and transparency for over 40 years.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#achievements">Achievements</a></li>
+            <li><a href="index.html#signatures">Signature Projects</a></li>
+            <li><a href="bloodbank.html">Blood Bank</a></li>
+            <li><a href="charitabletrust.html">Charitable Trust</a></li>
+            <li><a href="index.html#membership">Members</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:lionsclubhosurSIPCOT@gmail.com">lionsclubhosurSIPCOT@gmail.com</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Hosur SIPCOT, Tamil Nadu</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lions Club of Hosur SIPCOT. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

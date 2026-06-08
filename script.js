@@ -192,4 +192,163 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(`year-${targetYear}`).classList.add('active');
     });
   });
+
+  // Lions Hall Hero Slider functionality
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroDots = document.querySelectorAll('.hero-dot');
+  
+  if (heroSlides.length > 0 && heroDots.length > 0) {
+    let currentSlide = 0;
+    const slideInterval = 4000; // Change slide every 4 seconds
+
+    function showSlide(index) {
+      // Remove active class from all slides and dots
+      heroSlides.forEach(slide => slide.classList.remove('active'));
+      heroDots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to current slide and dot
+      heroSlides[index].classList.add('active');
+      heroDots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      showSlide(currentSlide);
+    }
+
+    // Auto-advance slides
+    let slideTimer = setInterval(nextSlide, slideInterval);
+
+    // Click on dots to change slide
+    heroDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        
+        // Reset timer when user manually changes slide
+        clearInterval(slideTimer);
+        slideTimer = setInterval(nextSlide, slideInterval);
+      });
+    });
+  }
+
+  // Partner Contact Form with Captcha
+  const partnerForm = document.getElementById('partnerForm');
+  const partnerModal = document.getElementById('partnerModal');
+  const partnerModalTrigger = document.getElementById('partnerModalTrigger');
+  const partnerModalClose = document.getElementById('partnerModalClose');
+  const partnerModalOverlay = document.getElementById('partnerModalOverlay');
+  const captchaQuestion = document.getElementById('captchaQuestion');
+  const captchaAnswer = document.getElementById('captchaAnswer');
+  const captchaFeedback = document.getElementById('captchaFeedback');
+  
+  if (partnerForm && captchaQuestion && captchaAnswer) {
+    let correctAnswer = 0;
+    
+    // Generate captcha
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 + num2;
+      captchaQuestion.textContent = `What is ${num1} + ${num2}?`;
+      captchaAnswer.value = '';
+      captchaFeedback.textContent = '';
+      captchaFeedback.className = 'captcha-feedback';
+    }
+    
+    // Initialize captcha on page load
+    generateCaptcha();
+    
+    // Open modal
+    function openPartnerModal() {
+      partnerModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      generateCaptcha();
+    }
+    
+    // Close modal
+    function closePartnerModal() {
+      partnerModal.classList.remove('active');
+      document.body.style.overflow = '';
+      partnerForm.reset();
+      generateCaptcha();
+    }
+    
+    // Modal triggers
+    if (partnerModalTrigger) {
+      partnerModalTrigger.addEventListener('click', openPartnerModal);
+    }
+    
+    if (partnerModalClose) {
+      partnerModalClose.addEventListener('click', closePartnerModal);
+    }
+    
+    if (partnerModalOverlay) {
+      partnerModalOverlay.addEventListener('click', closePartnerModal);
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && partnerModal.classList.contains('active')) {
+        closePartnerModal();
+      }
+    });
+    
+    // Validate captcha on input
+    captchaAnswer.addEventListener('input', () => {
+      const userAnswer = parseInt(captchaAnswer.value);
+      if (captchaAnswer.value === '') {
+        captchaFeedback.textContent = '';
+        captchaFeedback.className = 'captcha-feedback';
+      } else if (userAnswer === correctAnswer) {
+        captchaFeedback.textContent = '✓ Correct!';
+        captchaFeedback.className = 'captcha-feedback success';
+      } else if (captchaAnswer.value.length > 0) {
+        captchaFeedback.textContent = '✗ Incorrect, please try again';
+        captchaFeedback.className = 'captcha-feedback error';
+      }
+    });
+    
+    // Handle form submission
+    partnerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const userAnswer = parseInt(captchaAnswer.value);
+      
+      // Validate captcha
+      if (userAnswer !== correctAnswer) {
+        captchaFeedback.textContent = '✗ Please solve the captcha correctly';
+        captchaFeedback.className = 'captcha-feedback error';
+        captchaAnswer.focus();
+        return;
+      }
+      
+      // Get form values
+      const name = document.getElementById('partnerName').value;
+      const email = document.getElementById('partnerEmail').value;
+      const phone = document.getElementById('partnerPhone').value;
+      const purpose = document.getElementById('partnerPurpose').value;
+      const description = document.getElementById('partnerDescription').value;
+      
+      // Create mailto link
+      const subject = `Partnership Inquiry - ${purpose}`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Purpose: ${purpose}`,
+        '',
+        `Message:`,
+        description
+      ].join('\n');
+      
+      const mailto = `mailto:lionsclubhosurSIPCOT@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      
+      // Close modal and reset form
+      setTimeout(() => {
+        closePartnerModal();
+      }, 500);
+    });
+  }
 });
