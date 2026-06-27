@@ -43,7 +43,7 @@
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Est. 40 Years Ago &mdash; Serving Hosur Since Day One</div>
+      <div class="hero-badge">Started in 1985 &mdash; Serving Hosur Since Day One&hellip; 40 Yrs+</div>
       <h1 class="hero-title">Lions Club of Hosur SIPCOT</h1>
       <p class="hero-subtitle">We Serve</p>
       <p class="hero-description">
@@ -72,13 +72,14 @@
           <h3>40 Years of Selfless Service</h3>
           <p>One of the oldest clubs in Hosur, Lions Club of Hosur SIPCOT has consistently topped District 324E among 185+ clubs for the impact we make on society.</p>
           <div class="about-features">
-            <div class="about-feature">
+            <button type="button" class="about-feature about-feature--clickable" id="purposeModalTrigger" aria-haspopup="dialog">
               <div class="feature-icon"><i class="fas fa-trophy"></i></div>
               <div>
                 <h4>Purpose &amp; Core Values</h4>
                 <p>Driven by unwavering commitment to community welfare</p>
+                <span class="about-feature-link">View details <i class="fas fa-arrow-right"></i></span>
               </div>
-            </div>
+            </button>
             <div class="about-feature">
               <div class="feature-icon"><i class="fas fa-handshake"></i></div>
               <div>
@@ -96,7 +97,7 @@
             <div class="about-feature">
               <div class="feature-icon"><i class="fas fa-heart"></i></div>
               <div>
-                <h4>The ONLY Family Bonded Club</h4>
+                <h4>Family Bonded Club</h4>
                 <p>Close to zero attrition &mdash; we selectively add members who share our vision</p>
               </div>
             </div>
@@ -110,7 +111,6 @@
   <section class="section structure" id="structure">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Organization</span>
         <h2 class="section-title">Our Structure</h2>
         <div class="section-divider"></div>
       </div>
@@ -132,7 +132,7 @@
         </div>
       </div>
       <div class="compliance-section">
-        <h3>Only Club in Town with Full Regulatory Compliance</h3>
+        <h3>Fully compliant with regulatory requirements</h3>
         <p class="compliance-subtitle">MCA21 CSR registered &amp; FCRA approved</p>
         <div class="compliance-badges">
           <div class="badge">
@@ -172,6 +172,7 @@
         <span class="section-label">What We Do</span>
         <h2 class="section-title">Our Areas of Focus</h2>
         <div class="section-divider"></div>
+        <p class="focus-subsection">Health &ndash; Education - Environment</p>
       </div>
       <div class="focus-grid">
         <div class="focus-card">
@@ -1695,6 +1696,49 @@
       </div>
     </div>
   </section>
+
+  <!-- Purpose & Core Values Modal -->
+  <div class="modal" id="purposeModal">
+    <div class="modal-overlay" id="purposeModalOverlay"></div>
+    <div class="modal-content purpose-modal-content">
+      <button class="modal-close" id="purposeModalClose" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-header-top">
+          <span class="section-label">Lions Clubs International</span>
+          <h2 class="modal-title">Purpose &amp; Core Values</h2>
+        </div>
+      </div>
+
+      <div class="modal-body purpose-modal-body">
+        <div class="purpose-block">
+          <h3>Purposes</h3>
+          <ul>
+            <li>To organize, charter and supervise service clubs to be known as Lions clubs.</li>
+            <li>To coordinate the activities and standardize the administration of Lions clubs.</li>
+            <li>To create and foster a spirit of understanding among the peoples of the world.</li>
+            <li>To promote the principles of good government and good citizenship.</li>
+            <li>To take an active interest in the civic, cultural, social and moral welfare of the community.</li>
+            <li>To unite the clubs in the bonds of friendship, good fellowship and mutual understanding.</li>
+            <li>To provide a forum for the open discussion of all matters of public interest; provided, however, that partisan politics and sectarian religion shall not be debated by club members.</li>
+            <li>To encourage service-minded people to serve their community without personal financial reward, and to encourage efficiency and promote high ethical standards in commerce, industry, professions, public works and private endeavors.</li>
+          </ul>
+        </div>
+
+        <div class="purpose-block">
+          <h3>Vision Statement</h3>
+          <p>To be the global leader in community and humanitarian service.</p>
+        </div>
+
+        <div class="purpose-block">
+          <h3>Mission Statement</h3>
+          <p>To empower volunteers to serve their communities, meet humanitarian needs, encourage peace and promote international understanding through Lions clubs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Partner With Us Modal -->
   <div class="modal" id="partnerModal">

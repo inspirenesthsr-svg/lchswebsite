@@ -232,6 +232,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Purpose & Core Values Modal
+  const purposeModal = document.getElementById('purposeModal');
+  const purposeModalTrigger = document.getElementById('purposeModalTrigger');
+  const purposeModalClose = document.getElementById('purposeModalClose');
+  const purposeModalOverlay = document.getElementById('purposeModalOverlay');
+
+  function openPurposeModal() {
+    if (!purposeModal) return;
+    purposeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePurposeModal() {
+    if (!purposeModal) return;
+    purposeModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (purposeModalTrigger) {
+    purposeModalTrigger.addEventListener('click', openPurposeModal);
+  }
+
+  if (purposeModalClose) {
+    purposeModalClose.addEventListener('click', closePurposeModal);
+  }
+
+  if (purposeModalOverlay) {
+    purposeModalOverlay.addEventListener('click', closePurposeModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (purposeModal && purposeModal.classList.contains('active')) {
+      closePurposeModal();
+    }
+  });
+
   // Partner Contact Form with Captcha
   const partnerForm = document.getElementById('partnerForm');
   const partnerModal = document.getElementById('partnerModal');
