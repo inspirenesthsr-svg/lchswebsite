@@ -1918,7 +1918,7 @@
             </div>
             <div id="additionalFields" style="display: none;">
               <a
-                href="upi://pay?pa=lionsclubofhosurSIPCOTproject1@tmb&amp;pn=Lions%20Club%20of%20Hosur%20SIPCOT%20Project&amp;am=16500.00&amp;cu=INR&amp;tn=Premium%20Membership"
+                href="gpay://upi/pay?pa=lionsclubofhosurSIPCOTproject1@tmb&amp;pn=Lions%20Club%20of%20Hosur%20SIPCOT%20Project&amp;am=16500.00&amp;cu=INR&amp;tn=Premium%20Membership"
                 class="btn btn-pay-now modal-submit-btn"
                 id="payNowBtn"
               >
@@ -2035,6 +2035,18 @@
         
         // Show additional fields
         document.getElementById('additionalFields').style.display = 'block';
+
+        // Scroll Pay Now button into view on mobile
+        setTimeout(function() {
+          var payBtn = document.getElementById('payNowBtn');
+          var modalBox = document.querySelector('#membershipFeesModal .modal-box');
+          if (payBtn) {
+            payBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          if (modalBox) {
+            modalBox.scrollTop = modalBox.scrollHeight;
+          }
+        }, 100);
         
         // Disable phone input and validate button
         phoneInput.disabled = true;

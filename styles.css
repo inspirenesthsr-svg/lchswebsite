@@ -3488,40 +3488,47 @@ button.btn-outline:hover {
    Membership Fees Modal
    ======================================== */
 
-.modal-overlay {
+#membershipFeesModal {
   position: fixed;
   inset: 0;
   z-index: 2000;
   background: rgba(10, 25, 50, 0.72);
   backdrop-filter: blur(6px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.modal-overlay.active {
+#membershipFeesModal.active {
   opacity: 1;
   pointer-events: all;
 }
 
-.modal-box {
+#membershipFeesModal .modal-box {
   position: relative;
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 40px 36px 36px;
   max-width: 680px;
   width: 100%;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 30px 80px rgba(10, 25, 50, 0.35);
   transform: translateY(24px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
   opacity: 0;
+  margin: auto 0;
+  flex-shrink: 0;
 }
 
-.modal-overlay.active .modal-box {
+#membershipFeesModal.active .modal-box {
   transform: translateY(0) scale(1);
   opacity: 1;
 }
@@ -4076,17 +4083,41 @@ button.btn-outline:hover {
 
 /* Responsive: stack to single column */
 @media (max-width: 680px) {
+  #membershipFeesModal {
+    padding: 10px 12px;
+    align-items: flex-start;
+  }
+
+  #membershipFeesModal .modal-box {
+    max-height: calc(100dvh - 20px);
+    padding: 28px 16px 24px;
+  }
+
+  #membershipFeesModal .modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+
+  #membershipFeesModal .modal-header h3 {
+    font-size: 1.2rem;
+  }
+
   .modal-body--two-col {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .modal-box--wide {
-    max-width: 420px;
+    max-width: 100%;
   }
 
   .modal-qr-frame--large img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .modal-qr-frame--large {
+    padding: 12px;
   }
 
   .qr-mask i {
@@ -4105,6 +4136,11 @@ button.btn-outline:hover {
 
   .input-button-group {
     gap: 6px;
+  }
+
+  #additionalFields {
+    margin-top: 4px;
+    padding-bottom: 8px;
   }
 }
 
