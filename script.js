@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const donateForm = document.getElementById('donateForm');
   const copyUpiBtn = document.getElementById('copyUpiBtn');
   const copyUpiFeedback = document.getElementById('copyUpiFeedback');
   const donateUpiId = document.getElementById('donateUpiId');
@@ -123,37 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.setTimeout(() => {
         copyUpiFeedback.textContent = '';
       }, 4000);
-    });
-  }
-
-  if (donateForm) {
-    donateForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!donateForm.checkValidity()) {
-        donateForm.reportValidity();
-        return;
-      }
-      const name = document.getElementById('donorName').value.trim();
-      const email = document.getElementById('donorEmail').value.trim();
-      const phone = document.getElementById('donorPhone').value.trim();
-      const amount = document.getElementById('donorAmount').value.trim();
-      const purpose = document.getElementById('donorPurpose').value;
-      const upi = donateUpiId ? donateUpiId.textContent.trim() : '';
-      const body = [
-        'I have made a donation via UPI.',
-        '',
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Amount: ₹${amount}`,
-        `Purpose: ${purpose}`,
-        '',
-        `UPI ID: ${upi}`,
-        '',
-        'Please share acknowledgement / 80G details as applicable.'
-      ].join('\n');
-      const mailto = `mailto:urssathiya@gmail.com?subject=${encodeURIComponent('Donation notification - LCHS')}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
     });
   }
 

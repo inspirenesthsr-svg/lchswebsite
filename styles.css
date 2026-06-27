@@ -2032,9 +2032,26 @@ a {
   max-width: 340px;
 }
 
+.donate-pay-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  min-height: 100%;
+}
+
+.donate-pay-hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--gray);
+  text-align: center;
+  line-height: 1.5;
+}
+
 .donate-submit {
   width: 100%;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {

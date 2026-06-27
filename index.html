@@ -1093,44 +1093,16 @@
         <p class="donate-payee">Lions Club of Hosur SIPCOT Project</p>
 
         <div class="donate-payment-main">
-          <form class="donate-form" id="donateForm" action="#" method="get" novalidate>
-            <div class="donate-fields">
-              <label class="donate-field">
-                <span class="donate-field-label">Your name</span>
-                <input type="text" name="donorName" id="donorName" required autocomplete="name" placeholder="Full name">
-              </label>
-              <label class="donate-field">
-                <span class="donate-field-label">Email ID</span>
-                <input type="email" name="donorEmail" id="donorEmail" required autocomplete="email" placeholder="your@email.com">
-              </label>
-              <label class="donate-field">
-                <span class="donate-field-label">Phone number</span>
-                <input type="tel" name="donorPhone" id="donorPhone" required autocomplete="tel" inputmode="numeric" placeholder="Mobile number" pattern="[0-9+\\s-]{10,15}">
-              </label>
-              <label class="donate-field">
-                <span class="donate-field-label">Donation amount (₹)</span>
-                <input type="number" name="donorAmount" id="donorAmount" required inputmode="numeric" placeholder="e.g. 1000" min="1">
-              </label>
-              <label class="donate-field donate-field--full">
-                <span class="donate-field-label">Purpose of donation</span>
-                <select name="donorPurpose" id="donorPurpose" required>
-                  <option value="">Select purpose</option>
-                  <option value="Blood Bank">Blood Bank</option>
-                  <option value="School Adoption">School Adoption</option>
-                  <option value="Medical Camps">Medical Camps</option>
-                  <option value="Service Hall Project">Service Hall Project</option>
-                  <option value="Eye Care Programs">Eye Care Programs</option>
-                  <option value="Tree Plantation">Tree Plantation</option>
-                  <option value="Food for Hunger">Food for Hunger</option>
-                  <option value="General Donation">General Donation</option>
-                  <option value="Other">Other</option>
-                </select>
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg donate-submit" id="donateSubmitBtn">
-              <i class="fas fa-paper-plane"></i> Submit donation details
-            </button>
-          </form>
+          <div class="donate-pay-column">
+            <a
+              href="gpay://upi/pay?pa=lionsclubofhosurSIPCOTproject@tmb&amp;pn=Lions%20Club%20of%20Hosur%20SIPCOT%20Project&amp;cu=INR&amp;tn=Donation"
+              class="btn btn-pay-now donate-submit"
+              id="donateGpayBtn"
+            >
+              <i class="fab fa-google-pay"></i> Donate
+            </a>
+            <p class="donate-pay-hint">Opens Google Pay on your phone. Enter your donation amount in the app.</p>
+          </div>
 
           <div class="donate-qr-column">
             <div class="donate-qr-block">
@@ -1151,7 +1123,7 @@
           <p class="donate-copy-feedback" id="copyUpiFeedback" aria-live="polite"></p>
         </div>
 
-        <p class="donate-hint">After paying via QR or UPI, submit your details so we can send acknowledgement and 80G documentation where applicable.</p>
+        <p class="donate-hint">Tap <strong>Donate</strong> to pay via Google Pay, or scan the QR code / use the UPI ID above. Eligible donors may request 80G documentation after payment.</p>
       </div>
     </div>
   </section>
