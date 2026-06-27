@@ -4025,6 +4025,46 @@ button.btn-outline:hover {
   margin-top: 4px;
 }
 
+.btn-pay-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pay-now:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.btn-pay-now .fa-google-pay {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.modal-pay-hint {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: var(--gray);
+  text-align: center;
+  line-height: 1.45;
+}
+
 .modal-form-feedback {
   font-size: 0.82rem;
   color: #27ae60;

@@ -1903,7 +1903,7 @@
             <i class="fas fa-rupee-sign"></i> Membership Fee &nbsp;<strong>₹16,500</strong>
           </div>
           <p class="modal-form-title"><i class="fas fa-user-check"></i> Member Details</p>
-          <form class="modal-member-form" id="memberFeesForm" onsubmit="submitMemberFeesForm(event)">
+          <form class="modal-member-form" id="memberFeesForm">
             <div class="phone-validate-group">
               <label class="modal-field modal-field--with-button">
                 <span>Phone Number</span>
@@ -1917,19 +1917,15 @@
               <p class="validation-feedback" id="phoneFeedback" aria-live="polite"></p>
             </div>
             <div id="additionalFields" style="display: none;">
-              <label class="modal-field">
-                <span>Full Name</span>
-                <input type="text" id="mfName" name="mfName" placeholder="Your full name" required autocomplete="name">
-              </label>
-              <label class="modal-field">
-                <span>Email ID</span>
-                <input type="email" id="mfEmail" name="mfEmail" placeholder="your@email.com" required autocomplete="email">
-              </label>
-              <button type="submit" class="btn btn-primary modal-submit-btn">
-                <i class="fas fa-paper-plane"></i> Submit Details
-              </button>
+              <a
+                href="upi://pay?pa=lionsclubofhosurSIPCOTproject1@tmb&amp;pn=Lions%20Club%20of%20Hosur%20SIPCOT%20Project&amp;am=16500.00&amp;cu=INR&amp;tn=Premium%20Membership"
+                class="btn btn-pay-now modal-submit-btn"
+                id="payNowBtn"
+              >
+                <i class="fab fa-google-pay"></i> Pay Now
+              </a>
+              <p class="modal-pay-hint">Opens Google Pay / UPI app on your phone with ₹16,500 pre-filled.</p>
             </div>
-            <p class="modal-form-feedback" id="mfFeedback" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1959,7 +1955,6 @@
       
       // Clear feedback messages
       document.getElementById('phoneFeedback').textContent = '';
-      document.getElementById('mfFeedback').textContent = '';
       document.getElementById('membershipCopyFeedback').textContent = '';
     }
     
@@ -2050,19 +2045,6 @@
         feedback.textContent = '❌ Phone number not found in members list. Please contact admin.';
         feedback.style.color = '#e74c3c';
       }
-    }
-    
-    function submitMemberFeesForm(e) {
-      e.preventDefault();
-      var name  = document.getElementById('mfName').value.trim();
-      var email = document.getElementById('mfEmail').value.trim();
-      var phone = document.getElementById('mfPhone').value.trim();
-      var fb    = document.getElementById('mfFeedback');
-      var subject = encodeURIComponent('Membership Fee Payment — ' + name);
-      var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n[Please mention your UPI transaction reference here]');
-      window.location.href = 'mailto:lionsclubhosurSIPCOT@gmail.com?subject=' + subject + '&body=' + body;
-      fb.textContent = '✓ Opening your email app…';
-      setTimeout(function() { fb.textContent = ''; }, 3000);
     }
   </script>
 </body>
